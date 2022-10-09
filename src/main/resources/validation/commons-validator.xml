@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE form-validation SYSTEM "src/main/resources/validation/validator_1_4_0.dtd">
+
+<form-validation>
+
+<!--    全局校验器-->
+    <global>
+<!--        校验规则-->
+        <validator name="yidaValidateRule"
+                   classname="com.zhangeaky.mycreate.validation.NameValidator"
+                   method="validateRequired"
+                   methodParams="java.lang.Object, org.apache.commons.validator.Field"/>
+    </global>
+
+    <formset>
+        <form    name="nameForm">
+            <field property="huaming" depends="yidaValidateRule">
+                <arg0 key="nameForm.firstname.displayname"/>
+            </field>
+            <field property="gonghao" depends="yidaValidateRule">
+                <arg0 key="nameForm.lastname.displayname"/>
+            </field>
+        </form>
+    </formset>
+
+</form-validation>
