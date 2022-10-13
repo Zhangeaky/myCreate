@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@ImportResource("classpath:/META-INF/spring/moniter-bean.xml")
+@ImportResource("classpath*:/META-INF/spring/*.xml")
 public class SpringBootApplicationBootStrap {
 
 	public static void main(String[] args) {
