@@ -35,7 +35,7 @@
         <property name="password" value="${jdbc.password}" />
     </bean>
 
-    <bean class="org.springframework.jdbc.core.JdbcTemplate" >
+    <bean id="template" class="org.springframework.jdbc.core.JdbcTemplate" >
         <property name="dataSource" ref="dataSource"/>
     </bean>
 

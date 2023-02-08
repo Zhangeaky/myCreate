@@ -1,6 +1,8 @@
 package com.zhangeaky.mycreate.controller.login;
 
 import com.zhangeaky.mycreate.validation.ValidateUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,9 @@ import javax.validation.constraints.NotBlank;
 
 @RestController
 public class LoginControllerV2 {
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
 
     /**

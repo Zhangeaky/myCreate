@@ -12,7 +12,7 @@ public class YidaBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         a++;
-        System.out.println("beanName: " + beanName + "yida: " + a);
+        System.out.println("beanName: " + beanName + "yida: " + a + bean);
         return bean;
     }
 }

@@ -1,9 +1,31 @@
 package com.zhangeaky.mycreate.bean;
 
-public class User {
+import javax.validation.constraints.Email;
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private String name;
-    private String id;
+    private Long id;
+    private int age;
+    @Email
+    private String email;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getName() {
         return name;
@@ -13,11 +35,11 @@ public class User {
         this.name = name;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -25,7 +47,9 @@ public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", id='" + id + '\'' +
+                ", id=" + id +
+                ", age=" + age +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
