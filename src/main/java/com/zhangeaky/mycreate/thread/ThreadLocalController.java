@@ -4,11 +4,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
 @RestController
 public class ThreadLocalController {
     static class Request {
@@ -55,26 +50,4 @@ public class ThreadLocalController {
         return context.toString();
     }
 
-    public static ExecutorService es = new ThreadPoolExecutor(10, 10,
-            60, TimeUnit.SECONDS, new LinkedBlockingQueue<>(10));
-
-    public Integer invokeTimes = 0;
-
-    public Integer copy = 0;
-
-
-    @RequestMapping("/invoke")
-    String test03() {
-
-        es.execute(new Runnable() {
-            @Override
-            public void run() {
-                invokeTimes++;
-                copy++;
-                System.out.println("worker" + Thread.currentThread().getName());
-            }
-        });
-
-        return String.valueOf(invokeTimes.equals(copy));
-    }
 }
