@@ -11,4 +11,8 @@ public class AlipayService implements CommonService{
     public void doSth() {
         System.out.println("Alipay!");
     }
+
+    public void pay() {
+        System.out.println("支付中 ... ");
+    }
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.Semaphore;
 
 @RestController
+@RequestMapping("/try")
 public class TryController {
 
     @Autowired
@@ -28,5 +29,10 @@ public class TryController {
         }
 
         return "Hello";
+    }
+
+    @RequestMapping("/hello")
+    String hello() {
+        return "hello";
     }
 }

@@ -5,10 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-    大家好，我是益达！
+#set($name = "yida")
+    大家好，我是 $name ！
 
-<form method="post" action="/v1/hello">
-    <input type="text">
+<form method="post" action="/yida/login/test">
+    <input name="userName" type="text" >
+    <input name="passwd" type="text" >
     <p><input type="submit"> </p>
 </form>
 
